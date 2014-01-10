@@ -4,7 +4,7 @@ var Hapi = require('hapi');
 
 console.log("PORT:",process.env.PORT);
 var port = process.env.PORT || 8000;
-var server = Hapi.createServer(port);
+var server = Hapi.createServer("gdg-lisbon.com",port);
 
 server.route({
     method: 'GET',
