@@ -12,4 +12,8 @@ server.route({
     }
 });
 
-server.start();
+// Start the server
+server.start(function () {
+    uri = server.info.uri;
+    console.log('Server started at: ' + server.info.uri);
+});
