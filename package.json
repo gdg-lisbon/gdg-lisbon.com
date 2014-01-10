@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/gdg-lisbon/gdg-lisbon.com",
   "dependencies": {
-    "hapi": "~1.8.3"
+    "node-static": "~0.7.2"
   }
 }

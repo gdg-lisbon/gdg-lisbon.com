@@ -1,22 +1,10 @@
-var Hapi = require('hapi');
+var static = require('node-static');
 
-// Create a server with a host and port
+var file = new(static.Server)('./public');
 
-console.log("PORT:",process.env.PORT);
-var port = process.env.PORT || 8000;
-var server = new Hapi.Server(port, { cache: {engine: 'memory'}});
-// var server = Hapi.createServer("gdg-lisbon.com",port);
-
-server.route({
-    method: 'GET',
-    path: '/{path*}',
-    handler: {
-        directory: { path: __dirname + '/public', listing: true, index: true }
-    }
-});
-
-// Start the server
-server.start(function () {
-    uri = server.info.uri;
-    console.log('Server started at: ' + server.info.uri);
-});
+require('http').createServer(function (request, response) {
+    request.on('end', function () {
+      file.serve(request, response)
+    })
+    request.resume()
+}).listen(process.env.PORT || 8080, function() { console.log('Listening on 80')});
