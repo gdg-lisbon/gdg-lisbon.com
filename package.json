@@ -1,0 +1,27 @@
+{
+  "name": "gdg-lisbon.com",
+  "version": "0.0.0",
+  "description": "gdg-lisbon's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gdg-lisbon/gdg-lisbon.com.git"
+  },
+  "keywords": [
+    "website",
+    "gdg",
+    "lisbon"
+  ],
+  "author": "Francisco Dias <xicombd@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gdg-lisbon/gdg-lisbon.com/issues"
+  },
+  "homepage": "https://github.com/gdg-lisbon/gdg-lisbon.com",
+  "dependencies": {
+    "hapi": "~2.0.0-preview"
+  }
+}
