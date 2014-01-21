@@ -7,7 +7,8 @@ var sheetData = [],
 
 var port = eval(process.env.PORT) || 8080;
 
-var KEY = '0AhSAZYKyt0p7dER5T3JOQkhjOC1nSWoxdmh5bzFkUFE';
+var tabletop,
+	KEY = '0AhSAZYKyt0p7dER5T3JOQkhjOC1nSWoxdmh5bzFkUFE';
 
 var options = {
     views: {
@@ -19,19 +20,23 @@ var options = {
     }
 }; 
 
-Tabletop.init({
-    key: KEY,
-    callback: function(data, tabletop) { 
-        //console.log(data); 
-        sheetData = data;
-        events = sheetData.Events.elements;
-        projects = sheetData.Projects.elements;
+function getData() {
+	tabletop = Tabletop.init({
+	    key: KEY,
+	    callback: function(data, tabletop) { 
+	        sheetData = data;
+	        events = sheetData.Events.elements;
+	        projects = sheetData.Projects.elements;
 
-        console.log("EVENTS", events);
-        console.log("PROJECTS", projects);
-    },
-    simpleSheet: false 
-});
+	        console.log("EVENTS", events);
+	        console.log("PROJECTS", projects);
+	    },
+	    simpleSheet: false 
+	});
+}
+
+getData();
+setInterval(getData, 60000);
 
 // Create a server with a host, port, and options
 var server = Hapi.createServer('0.0.0.0', port, options);
