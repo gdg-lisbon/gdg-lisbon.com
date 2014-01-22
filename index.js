@@ -25,11 +25,15 @@ function getData() {
 	    key: KEY,
 	    callback: function(data, tabletop) { 
 	        sheetData = data;
-	        events = sheetData.Events.elements;
-	        projects = sheetData.Projects.elements;
-
-	        console.log("EVENTS", events);
-	        console.log("PROJECTS", projects);
+	        if(sheetData) {
+                if(sheetData.Events){
+                    events = sheetData.Events.elements;
+                    console.log("EVENTS", events);
+                } if(sheetData.Projects){ 
+                    projects = sheetData.Projects.elements;
+                    console.log("PROJECTS", projects);
+                }
+            }
 	    },
 	    simpleSheet: false 
 	});
