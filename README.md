@@ -1,4 +1,4 @@
-http://gdg-lisbon.com
+[Google Developer Group Lisbon](http://gdg-lisbon.com)
 ==============
 
 Hi! 
